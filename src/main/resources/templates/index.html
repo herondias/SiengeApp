@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="SiengeApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Sienge</title>
+	
+	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="webjars/angular-toastr/2.1.1/dist/angular-toastr.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<a class="navbar-brand" href="#">SIENGE</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarCollapse" aria-controls="navbarCollapse"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="#!">Simular Custo</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#!cadastrarVeiculo">Tipos Veículos</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#!sobre">Sobre</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div role="main" class="container">
+		<div ng-view></div>
+	</div>
+
+	<!-- CoreLibs JavaScript -->
+	<script src="webjars/jquery/3.3.1/dist/jquery.min.js"></script>
+	<script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script src="webjars/angularjs/1.7.2/angular.min.js"></script>
+	<script src="webjars/angular-route/1.7.3/angular-route.min.js"></script>
+	<script src="webjars/angular-animate/1.7.4/angular-animate.min.js"></script>
+	<script src="webjars/angular-toastr/2.1.1/dist/angular-toastr.tpls.js"></script>
+
+	<!-- App JavaScript -->
+	<script src="/assets/js/app.js"></script>
+</body>
+</html>

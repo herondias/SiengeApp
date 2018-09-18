@@ -1,0 +1,39 @@
+<div class="row justify-content-md-center">
+	<article class="card-body bg-light" style="max-width: 500px;">
+		<h5 class="card-title  text-center">Simular Custo do Transporte</h5>
+		<form class="mt-4">
+		 <div class="form-group">
+		    <label for="tipoVeiculo">Tipo de Ve&iacute;culo Utilizado</label>
+		    <select class="form-control" id="tipoVeiculo"
+		    	ng-options="item.fatorMultiplicador as item.descricao for item in transp.tiposVeiculos" 
+		    	ng-model="transp.simulacaoParam.fatorMultiplicador" placeholder="Selecione">
+		    	<option value="">-- Selecione --</option>
+		    </select>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="pesoCarga">Peso da Carga Transportada <b>(ton)</b></label>
+		    <input type="number" min="0" class="form-control" id="pesoCarga" ng-model="transp.simulacaoParam.pesoCarga" required>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="distPavimentada">Dist&acirc;ncia Rodovia Pavimentada <b>(km)</b></label>
+		    <input type="number" min="0" class="form-control" id="distPavimentada" ng-model="transp.simulacaoParam.distPavimentada" required>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="distNaoPavimentada">Dist&acirc;ncia Rodovia n&atilde;o Pavimentada <b>(km)</b></label>
+		    <input type="number" min="0" class="form-control" id="distNaoPavimentada" ng-model="transp.simulacaoParam.distNaoPavimentada" required>
+		  </div>
+		  
+		  <div class="form-group">
+			  <button type="button" class="btn btn-lg btn-success" ng-click="transp.simularCustos(transp.simulacaoParam)">Calcular</button>
+			  <button type="button" class="btn btn-lg btn-dark" ng-click="transp.limpar()">Limpar</button>
+		  </div>
+		</form>
+		<br />
+		<div class="bg-info" style="padding: 10px; color: #fff" ng-if="transp.simulacao.custoFrete">
+			<b>Custo do Transporte:</b> {{transp.simulacao.custoFrete | currency : 'R$ '}}
+		</div>
+	</article>
+</div>

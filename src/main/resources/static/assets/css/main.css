@@ -1,0 +1,7 @@
+@charset "ISO-8859-1";
+
+/* Show it is fixed to the top */
+body {
+  min-height: 40rem;
+  padding-top: 4.0rem;
+}
