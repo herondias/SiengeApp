@@ -28,6 +28,8 @@ public class TransporteControllerTest {
 	
 	@Autowired
 	private TestRestTemplate restTemplate;
+	private TransporteDTO transporte = null;
+	private ObjectMapper mapper = new ObjectMapper();
 
 	/**
 	 * Testa retorno do custo para qualquer valor válido submetido
@@ -37,9 +39,6 @@ public class TransporteControllerTest {
 	 */
 	@Test
 	public void postSimularCusto_getCustoValido() throws JsonParseException, JsonMappingException, IOException {
-		TransporteDTO transporte = null;
-		ObjectMapper mapper = new ObjectMapper();
-		
 		HttpEntity<String> httpEntityMock = TransporteMockFactory.getCustoTransporte();
 	
 		ResponseEntity<?> response = restTemplate.postForEntity("/simularCustoTransporte", httpEntityMock, String.class);		
@@ -51,9 +50,6 @@ public class TransporteControllerTest {
 	
 	@Test
 	public void postTransporteCusto_getResultadoAteCincoToneladas() throws JsonParseException, JsonMappingException, IOException {
-		TransporteDTO transporte = null;
-		ObjectMapper mapper = new ObjectMapper();
-		
 		HttpEntity<String> httpEntityMock = TransporteMockFactory.getCustoTransporteValidoCincoToneladas();
 		
 		ResponseEntity<?> response = restTemplate.postForEntity("/simularCustoTransporte", httpEntityMock, String.class);
@@ -65,9 +61,6 @@ public class TransporteControllerTest {
 	
 	@Test
 	public void postTransporteCusto_getResultadoAcimaCincoToneladas() throws JsonParseException, JsonMappingException, IOException {
-		TransporteDTO transporte = null;
-		ObjectMapper mapper = new ObjectMapper();
-		
 		HttpEntity<String> httpEntityMock = TransporteMockFactory.getCustoTransporteValidoAcimaCincoToneladas();
 		
 		ResponseEntity<?> response = restTemplate.postForEntity("/simularCustoTransporte", httpEntityMock, String.class);
@@ -79,7 +72,6 @@ public class TransporteControllerTest {
 	
 	@Test
 	public void postTransporteCusto_getResultadoDistanciaInvalida() throws JsonParseException, JsonMappingException, IOException {
-		
 		HttpEntity<String> httpEntityMock = TransporteMockFactory.getTransporteDistanciaInvalida();
 		
 		ResponseEntity<?> response = restTemplate.postForEntity("/simularCustoTransporte", httpEntityMock, String.class);
